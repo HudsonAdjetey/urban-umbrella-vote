@@ -4,10 +4,13 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { errorHandler, notFound } = require("./handlers");
+const runDb = require("./controllers/dbConfig");
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 // app.use(express.static('public'))
+
+runDb().catch(console.dir);
 
 app.use(cors());
 app.use(bodyParser.json());
