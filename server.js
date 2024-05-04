@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { errorHandler, notFound } = require("./handlers");
-const runDb = require("./controllers/dbConfig");
+const runDb = require("./controllers/dbConfig.js");
 
 const app = express();
 const port = process.env.PORT || 4000;
